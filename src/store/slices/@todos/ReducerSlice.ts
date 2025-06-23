@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface Todo {
-    id: number,
+    id: string,
     text: string,
     completed: boolean,
 }
@@ -18,14 +18,14 @@ const todoSlice = createSlice({
     name: "todos",
     initialState,
     reducers: {
-        addTodo: (state, action: PayloadAction<{id: number, text: string}>) => {
+        addTodo: (state, action: PayloadAction<{id: string, text: string}>) => {
             state.todos.push({
                 id: action.payload.id,
                 text: action.payload.text,
                 completed: false,
             })
         },
-        toggleTodo: (state, action: PayloadAction<number>) => {
+        toggleTodo: (state, action: PayloadAction<string>) => {
             const todo = state.todos.find((todo) => todo.id == action.payload)
 
             if (todo) {

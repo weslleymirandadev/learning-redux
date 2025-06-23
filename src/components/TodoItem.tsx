@@ -4,7 +4,7 @@ import { useDispatch, UseDispatch } from "react-redux";
 import { toggleTodo } from "@/store/slices/@todos/ReducerSlice";
 
 export interface Todo {
-    id: number,
+    id: string,
     text: string,
     completed: boolean,
 }

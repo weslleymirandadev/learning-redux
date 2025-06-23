@@ -14,7 +14,7 @@ export default function TodoForm() {
         if (!input.trim()) return;
 
         dispatch(addTodo({
-            id: Date.now(),
+            id: crypto.randomUUID(),
             text: input
         }));
         setInput("");
